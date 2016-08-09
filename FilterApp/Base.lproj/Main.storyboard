@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,147 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-6p-uJs">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34Y-QD-cWm">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="pyW-Tu-ljq"/>
+                                </constraints>
+                                <state key="normal" title="pick Image"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pyW-Tu-ljq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pyW-Tu-ljq"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KmI-J5-0Xi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkF-49-67f">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="KZ8-vB-qXd"/>
+                                </constraints>
+                                <state key="normal" title="Capture image"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KZ8-vB-qXd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="KZ8-vB-qXd"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Egg-Mq-Q4s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5q-Cd-F4F">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="aRx-9z-BLF"/>
+                                </constraints>
+                                <state key="normal" title="Filter it!"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aRx-9z-BLF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="aRx-9z-BLF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="filterImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGN-TV-Saj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W5q-Cd-F4F" firstAttribute="width" secondItem="34Y-QD-cWm" secondAttribute="width" id="5lG-B5-nVy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XGW-6p-uJs" secondAttribute="trailing" constant="-20" id="6GG-Rs-WdE"/>
+                            <constraint firstItem="W5q-Cd-F4F" firstAttribute="height" secondItem="34Y-QD-cWm" secondAttribute="height" id="EVc-s7-WIK"/>
+                            <constraint firstItem="XGW-6p-uJs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="NBr-ZW-lPy"/>
+                            <constraint firstItem="34Y-QD-cWm" firstAttribute="leading" secondItem="hkF-49-67f" secondAttribute="leading" id="ZGr-4V-NVY"/>
+                            <constraint firstItem="hkF-49-67f" firstAttribute="height" secondItem="34Y-QD-cWm" secondAttribute="height" id="dem-d0-8w7"/>
+                            <constraint firstItem="hkF-49-67f" firstAttribute="leading" secondItem="W5q-Cd-F4F" secondAttribute="leading" id="jRC-bv-6vp"/>
+                            <constraint firstItem="34Y-QD-cWm" firstAttribute="top" secondItem="XGW-6p-uJs" secondAttribute="bottom" constant="8" symbolic="YES" id="l4H-OB-ah8"/>
+                            <constraint firstItem="hkF-49-67f" firstAttribute="width" secondItem="34Y-QD-cWm" secondAttribute="width" id="lJf-d7-Aw9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XGW-6p-uJs" secondAttribute="bottom" constant="197" id="nNS-wA-dbW"/>
+                            <constraint firstItem="XGW-6p-uJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nVw-bk-M29"/>
+                            <constraint firstItem="34Y-QD-cWm" firstAttribute="centerX" secondItem="XGW-6p-uJs" secondAttribute="centerX" id="p52-j4-URk"/>
+                            <constraint firstItem="W5q-Cd-F4F" firstAttribute="top" secondItem="hkF-49-67f" secondAttribute="bottom" constant="8" symbolic="YES" id="qpB-3G-daa"/>
+                            <constraint firstItem="hkF-49-67f" firstAttribute="top" secondItem="34Y-QD-cWm" secondAttribute="bottom" constant="8" symbolic="YES" id="zWz-Nm-g36"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XGW-6p-uJs"/>
+                                <exclude reference="34Y-QD-cWm"/>
+                                <exclude reference="hkF-49-67f"/>
+                                <exclude reference="W5q-Cd-F4F"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6GG-Rs-WdE"/>
+                                <exclude reference="NBr-ZW-lPy"/>
+                                <exclude reference="nVw-bk-M29"/>
+                                <exclude reference="ZGr-4V-NVY"/>
+                                <exclude reference="l4H-OB-ah8"/>
+                                <exclude reference="p52-j4-URk"/>
+                                <exclude reference="dem-d0-8w7"/>
+                                <exclude reference="jRC-bv-6vp"/>
+                                <exclude reference="lJf-d7-Aw9"/>
+                                <exclude reference="zWz-Nm-g36"/>
+                                <exclude reference="5lG-B5-nVy"/>
+                                <exclude reference="EVc-s7-WIK"/>
+                                <exclude reference="qpB-3G-daa"/>
+                                <exclude reference="nNS-wA-dbW"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="XGW-6p-uJs"/>
+                                <include reference="34Y-QD-cWm"/>
+                                <include reference="hkF-49-67f"/>
+                                <include reference="W5q-Cd-F4F"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6GG-Rs-WdE"/>
+                                <include reference="NBr-ZW-lPy"/>
+                                <include reference="nVw-bk-M29"/>
+                                <include reference="ZGr-4V-NVY"/>
+                                <include reference="l4H-OB-ah8"/>
+                                <include reference="p52-j4-URk"/>
+                                <include reference="dem-d0-8w7"/>
+                                <include reference="jRC-bv-6vp"/>
+                                <include reference="lJf-d7-Aw9"/>
+                                <include reference="zWz-Nm-g36"/>
+                                <include reference="5lG-B5-nVy"/>
+                                <include reference="EVc-s7-WIK"/>
+                                <include reference="qpB-3G-daa"/>
+                                <include reference="nNS-wA-dbW"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="captureImage" destination="hkF-49-67f" id="2up-BT-9U1"/>
+                        <outlet property="filterImage" destination="W5q-Cd-F4F" id="PEw-jv-2eH"/>
+                        <outlet property="imageView" destination="XGW-6p-uJs" id="Haf-7o-AIO"/>
+                        <outlet property="pickImage" destination="34Y-QD-cWm" id="GKE-aX-KoA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="379.5" y="311"/>
         </scene>
     </scenes>
 </document>
